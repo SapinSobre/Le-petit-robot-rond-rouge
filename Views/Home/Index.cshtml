@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@{
+    Layout = "~/Views/Shared/_LayoutLOgreEnSoucoupe.cshtml";
+}
+@if (HttpContext.Current.User.Identity.IsAuthenticated)
+{
+    <h3>Bonjour @HttpContext.Current.Session["Login"]!!!!!</h3>
+}
+else
+{
+    <h3>Bonjour!!!</h3>
+}
+<h3>
+    Depuis, le progrès technologique, Internet et les nouvelles technologies ont envahi nos foyers, créant de nouveaux usages, et une nouvelle génération, ultra connectée, communicante, collaborative et créative est née : les « digital natives ».
+
+
+
+    Aujourd'hui maman d'un garçon de 12 ans,  je constate que bien qu’ils fassent partie de leur quotidien, ces jeunes technophiles sont souvent passifs face aux ordinateurs, tablettes, smartphones etc., alors même que la maitrise des nouvelles technos et de la programmation sera essentielle pour leur avenir.
+
+
+
+    Tech Kids Academy est donc né avec l'ambition de rendre nos enfants actifs devant l'ordinateur, leur transmettre l'art d'être créatif et innovant avec les nouvelles technologies et leur communiquer l'envie d'apprendre en s'amusant afin de leur permettre de vivre de leur passion !
+</h3>

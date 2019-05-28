@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Strategie";
+    Layout = "~/Views/Shared/_LayoutAPropos.cshtml";
+}
+@section gestion{
+<div class="ajouter">
+    <div class="ajouterLivre">
+        <a href="@Url.Action("AjouterLivre", "Livre")"><img src="~/Content/images/livres.png" alt="iconeJouet" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div class="ajouterJouet">
+        <a href="@Url.Action("AjouterJouet", "Jouet")"><img src="~/Content/images/jouet.png" alt="iconeJouet" style="display:inline-block;width:50%;" /></a>
+    </div>
+    <div id="aPropos" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("TableDesMatieres", "APropos")"><img src="~/Content/images/businessPlan.png" alt="iconeBusinessPlan" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div id="lesChiffres" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("LesChiffres", "Gestion")"><img src="~/Content/images/argent.png" alt="iconeArgent" style="display:inline-block;width:40%;" /></a>
+    </div>
+</div>
+}
+@section pageBusinessPlan{
+    <h2>Stratégie : mission, vision, objectifs</h2>
+    <h3>Quel est votre projet?</h3>
+    <p></p>
+    <h3>Mission : Quelle est votre motivation pour entreprendre? Quelle sont les valeurs de votre activité ou entreprise?</h3>
+    <p></p>
+    <h3>Vision : Quels sont vos objectifs? A quelle étape voulez-vous être dans 1, 3 et 5 ans?</h3>
+    <p></p>
+}

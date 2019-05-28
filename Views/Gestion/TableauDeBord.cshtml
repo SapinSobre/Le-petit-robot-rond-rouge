@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutTableauDeBord.cshtml";
+}
+@{
+    ViewBag.Title = "TableauDeBord";
+}
+
+@section gestion{
+<div class="ajouter">
+    <div class="ajouterLivre">
+        <a href="@Url.Action("AjouterLivre", "Livre")"><img src="~/Content/images/livres.png" alt="iconeJouet" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div class="ajouterJouet">
+        <a href="@Url.Action("AjouterJouet", "Jouet")"><img src="~/Content/images/jouet.png" alt="iconeJouet" style="display:inline-block;width:50%;" /></a>
+    </div>
+    <div id="aPropos" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("TableDesMatieres", "APropos")"><img src="~/Content/images/businessPlan.png" alt="iconeBusinessPlan" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div id="lesChiffres" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("LesChiffres", "Gestion")"><img src="~/Content/images/argent.png" alt="iconeArgent" style="display:inline-block;width:40%;" /></a>
+    </div>
+</div>
+}

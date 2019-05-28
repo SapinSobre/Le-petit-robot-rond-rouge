@@ -1,0 +1,139 @@
+﻿@model Ogre.Models.ToutesActivitesVM
+
+@{
+    ViewBag.Title = "ToutesLesActivitesParAge";
+}
+
+@section styles{
+    <link rel="stylesheet" type="text/css" href="~/Content/css/activiteAccueil.css"/>
+}
+    <h3 style="color:#7fdcfa;font-size:2em;text-align:center;margin-bottom:-40px;margin-top:45px;">
+        Les activités pour les plus petits
+    </h3>
+    <div id="blocPresentation" style="margin-left: 5%;margin-top:50px;width:40%;">
+        <h4 style="color:#01274b;font-size:1.5em;margin-bottom:0;">
+            Pas d'écran!!!
+        </h4>
+        <p>
+            Les enfants programment le <img src="~/Content/images/bebeRobot.png" alt="bloc bleu" style="width:3%;" /> directement avec leurs mains, sans passer par un écran.<br />Il s’agit donc d’un jouet à base de blocs, <img src="~/Content/images/blocCubettoBeige.png" alt="bloc beige" style="width:3%;" />
+            <img src="~/Content/images/blocCubettoBleu.png" alt="bloc bleu" style="width:3%;" />
+            <img src="~/Content/images/blocCubettoJaune.png" alt="bloc jaune" style="width:3%;" />
+            <img src="~/Content/images/blocCubettoMauve.png" alt="bloc mauve" style="width:3%;" />
+            <img src="~/Content/images/blocCubettoRouge.png" alt="bloc rouge" style="width:3%;" />
+            <img src="~/Content/images/blocCubettoTrefle.png" alt="bloc trefle" style="width:3%;" />
+            <img src="~/Content/images/blocCubettoVert.png" alt="bloc vert" style="width:3%;" />
+            .
+        </p>
+    </div>
+    <div id="blocActis">
+        <fieldset id="actis4A7Ans">
+            <legend style="color:#01274b;font-size:1.4em;font-weight:bold;margin-left:60%;padding:2%;">
+                Les activités                
+            </legend>            
+                @foreach (var acti in Model.ListeActivites)
+                {
+                    if (acti.Age == "4-7 ans")
+                    {
+                        if (acti.Nom == "Cubetto dans l'espace")
+                        {
+                            <fieldset id="fieldsetCubetto">
+                                <legend class="legende">Du @acti.DateDebutStr au @acti.DateFinStr</legend>
+                                <div class="imageBackgroundCubetto"></div>
+
+                                <div id="blocDescriptionCubetto" class="blocDescriptionActi">
+                                    <h2 class="titreCubetto">@acti.Nom</h2>
+                                    <h4 class="chapeauCubetto">@acti.Chapeau</h4>
+                                </div>
+                            </fieldset>
+                        }
+                        if (acti.Nom == "Les aventures de Kibo")
+                        {
+                            <fieldset id="fieldsetKibo">
+                                <legend class="legende">Du @acti.DateDebutStr au @acti.DateFinStr</legend>
+                                <div class="imageBackgroundKibo"></div>
+
+                                <div id="blocDescriptionKibo" class="blocDescriptionActi">
+                                    <h2 class="titreKibo">@acti.Nom</h2>
+                                    <h4 class="chapeauKibo">@acti.Chapeau</h4>
+                                </div>
+                            </fieldset>
+                        }
+                    }
+                }
+
+            @foreach (var acti in Model.ListeActivites)
+            {
+                if (acti.Age == "7-11 ans")
+                {
+                    <div id="actis8A11Ans">
+                        <fieldset style="background-color:#98fa94;">
+                            <legend style="color:#070b3b;font-size:2em;">Les moyens</legend>
+                            @if (acti.Nom == "Scratch scratch scratch")
+                            {
+                                <fieldset style="background-color:white;">
+                                    <legend>Du @acti.DateDebutStr au @acti.DateFinStr</legend>
+                                    <div style="background-image:url('../Content/images/backgroundScratch.jpg');background-size:contain;opacity:0.3;width:100%;height:150px;position:absolute;"></div>
+
+                                    <div style="z-index:10;opacity:1;position:relative;">
+                                        <h2>@acti.Nom</h2>
+                                        <h4 style="color: yellow;text-align:center;">@acti.Chapeau</h4>
+                                    </div>
+                                </fieldset>
+                            }                                    
+                
+                        </fieldset>
+                    </div>
+               }
+             }
+        </fieldset>
+    <div class="actisPourquoi">
+        <h4>En quoi la programmation peut-elle intéresser les enfants?</h4>
+    </div>
+           
+</div>
+@*<div id="blocActivite">
+        <h2 style="color:white;text-align:center;">Activités</h2>
+        @for (var i = 0; i < Model.ListeActivites.Count; i++)
+        {
+            <fieldset name="activite">
+                <legend>@Model.ListeActivites[i].Nom</legend>
+                <div class="vignetteActivite">
+                    <div class="corpsVignette">
+                        <h3>@Model.ListeActivites[i].Chapeau</h3>
+                        <p>@Model.ListeActivites[i].Description</p>
+                        <h5>Du @Model.ListeActivites[i].DateDebut au @Model.ListeActivites[i].DateFin</h5>
+                        <h5>@Model.ListeActivites[i].Prix euros pour @Model.ListeActivites[i].NombreSeances séances</h5>
+                    </div>
+                    <div class="vignetteDroite">
+                        @if (Model.ListeEmployes[i] != null)
+                        {
+                            <div class="employeVignette">
+                                <h4>Conteuse</h4>
+                                <img src="~/Content/images/employes/@(Model.ListeEmployes[i].Prenom.ToLower())@(Model.ListeEmployes[i].Nom).jpg" alt="photo @Model.ListeEmployes[i].Prenom @Model.ListeEmployes[i].Nom" style="width:20%;" />
+                                <h5>@Model.ListeEmployes[i].Prenom @Model.ListeEmployes[i].Nom</h5>
+                            </div>
+                        }
+                        @if (Model.ListeActivites[i].Cubetto)
+                        {
+                            <div class="technosVignette">
+                                <img src="~/Content/images/blocsCubetto.png" alt="blocs Cubetto" width="10" />
+                            </div>
+                        }
+                    </div>
+                </div>
+            </fieldset>
+        }
+
+    </div>
+    <div id="sectionActivite">
+
+    </div>
+    <img src="~/Content/images/blocCubettoVert.png" alt="bloc vert" width="16" height="16" />
+        <img src="~/Content/images/blocCubettoRouge.png" alt="bloc rouge" width="16" height="16" />
+        <img src="~/Content/images/blocCubettoTrefle.png" alt="bloc trefle" width="16" height="16">
+        <img src="~/Content/images/blocCubettoBleu.png" alt="bloc bleu" width="16" height="16">
+        <img src="~/Content/images/blocCubettoBeige.png" alt="bloc beige" width="16" height="16">
+        <img src="~/Content/images/blocCubettoJaune.png" alt="bloc jaune" width="16" height="16">
+        <img src="~/Content/images/blocCubettoMauve.png" alt="bloc mauve" width="16" height="16">
+        <img src="~/Content/images/blocCubettoRouge2.png" alt="bloc rouge 2" width="16" height="16">
+*@

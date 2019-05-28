@@ -1,0 +1,106 @@
+﻿@model Ogre.Models.Livre
+@{
+    Layout = "~/Views/Shared/_LayoutTableauDeBord.cshtml";
+}
+@{
+    ViewBag.Title = "AjouterLivre";
+}
+@section gestion{
+<div class="ajouter">
+    <div class="ajouterLivre">
+        <a href="@Url.Action("AjouterLivre", "Livre")"><img src="~/Content/images/livres.png" alt="iconeJouet" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div class="ajouterJouet">
+        <a href="@Url.Action("AjouterJouet", "Jouet")"><img src="~/Content/images/jouet.png" alt="iconeJouet" style="display:inline-block;width:50%;" /></a>
+    </div>
+    <div id="aPropos" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("TableDesMatieres", "APropos")"><img src="~/Content/images/businessPlan.png" alt="iconeBusinessPlan" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div id="lesChiffres" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("LesChiffres", "Gestion")"><img src="~/Content/images/argent.png" alt="iconeArgent" style="display:inline-block;width:40%;" /></a>
+    </div>
+</div>
+}
+
+<div id="test">
+    <h2 id="ajouterJouetTitre">Ajouter un livre</h2>
+
+    @using (Html.BeginForm("AjouterLivre", "Livre", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.Label("Libelle", "Libellé")
+        <br />
+        @Html.TextBoxFor(model => model.Libelle)
+        <br />
+        @Html.ValidationMessageFor(model => model.Libelle)
+        <br />
+        @Html.LabelFor(model => model.Auteur)
+        <br />
+        @Html.TextBoxFor(model => model.Auteur)
+        <br />
+        @Html.ValidationMessageFor(model => model.Auteur)
+        <br />
+        @Html.LabelFor(model => model.Illustrateur)
+        <br />
+        @Html.TextBoxFor(model => model.Illustrateur)
+        <br />
+        @Html.ValidationMessageFor(model => model.Illustrateur)
+        <br />
+        @Html.LabelFor(model => model.Scenariste)
+        <br />
+        @Html.TextBoxFor(model => model.Scenariste)
+        <br />
+        @Html.ValidationMessageFor(model => model.Scenariste)
+        <br />
+        @Html.LabelFor(model => model.Description)
+        <br />
+        @Html.TextBoxFor(model => model.Description)
+        <br />
+        @Html.ValidationMessageFor(model => model.Description)
+        <br />
+        @Html.Label("Fabricant", "Éditeur")
+        <br />
+        @Html.TextBoxFor(model => model.Fabricant)
+        <br />
+        @Html.ValidationMessageFor(model => model.Fabricant)
+        <br />
+        @Html.LabelFor(model => model.Prix)
+        <br />
+        @Html.TextBoxFor(model => model.Prix)
+        <br />
+        @Html.ValidationMessageFor(model => model.Prix)
+        <br />
+        @Html.LabelFor(model => model.ImagePath)
+        <input type="file" name="ImageFile" required />
+        <br /><br />
+        @Html.Label("ListeAgesLivres", "Age")
+        <br />
+        @Html.DropDownListFor(model => model.AgeLivreId, Model.ListeAgesLivres)
+        <br />
+        @Html.ValidationMessageFor(model => model.ListeAgesLivres)
+        <br />
+        @Html.ValidationMessageFor(model => model.ListeThemeCheckboxVM)
+        for (int i = 0; i < Model.ListeThemeCheckboxVM.Count; i++)
+        {
+            <div>
+                @Html.CheckBoxFor(m => m.ListeThemeCheckboxVM[i].EstSelectionne)
+                @Html.LabelFor(m => m.ListeThemeCheckboxVM[i].EstSelectionne, Model.ListeThemeCheckboxVM[i].NomTheme)
+                @Html.HiddenFor(m => m.ListeThemeCheckboxVM[i].Id)
+                @Html.HiddenFor(m => m.ListeThemeCheckboxVM[i].NomTheme)
+            </div>
+        }
+
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.CategorieId)
+        @Html.HiddenFor(model => model.DateReception)
+        @Html.HiddenFor(model => model.ImageFile)
+        @Html.HiddenFor(model => model.AgeLivreId)
+        <input type="submit" value="Envoyer" />
+    }
+</div>
+<br /><br />
+
+
+
+
+
+

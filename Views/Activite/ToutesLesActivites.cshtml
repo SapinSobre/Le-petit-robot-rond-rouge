@@ -1,0 +1,17 @@
+﻿@model Ogre.Models.ToutesActivitesVM
+@{ 
+    Layout = "~/Views/Shared/_LayoutLOgreEnSoucoupe.cshtml";
+}
+@{
+    ViewBag.Title = "ToutesLesActivites";
+}
+
+<a style="margin-top:35px;margin-bottom:150px;width:80%;margin-left:10%;border-radius:100%;width:250px;height:250px;background-color:white;display:inline-block;margin-left:5%;" href="@Url.Action("ToutesLesActivitesParAge", new { age = "4-7 ans" })" id="blocRobotNounours">
+        <img src="~/Content/images/robotNounours.png" alt="icone robot nounours" style="display:inline-block;margin-left:30%;margin-top:70px;width:40%;" />
+</a>
+    <a href="@Url.Action("ToutesLesActivitesParAge", new { age = "7-11 ans" })" id="blocRobotEnfant" style="border-radius:100%;width:250px;height:250px;background-color:brown;display:inline-block;margin-left:5%;">
+        <img src="~/Content/images/robotNounours.png" alt="icone robot nounours" style="display:inline-block;margin-left:30%;margin-top:70px;width:40%;" />
+    </a>
+       
+   
+   

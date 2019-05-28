@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLOgreEnSoucoupe.cshtml";
+}
+@{
+    ViewBag.Title = "_LayoutLivre";
+}
+@section styles{
+    <link type="text/css" rel="stylesheet" href="~/Content/css/lOgreEnSoucoupe.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/css/tousLesLivres.css" />
+    <style>
+        #rechercheAge, #rechercheTheme, #rechercheNom {
+            display: inline-block;
+            color: black;
+            margin-left: 5%;
+            margin-top: 20px;
+            width: 27%;
+        }
+
+        input {
+            margin-left: 2%;
+        }
+
+        select {
+            margin-left: 4%;
+        }
+    </style>
+}
+
+@section rechercheLivreParTheme{
+    <div id="rechercheTheme">
+        <img src="~/Content/images/nombreJoueurs.png" alt="nombreJoueurs" style="width:10%;height:auto;" />
+        @Html.RouteLink("Recherche par thème", "RechercheLivreParTheme")
+    </div>
+}
+@section rechercheLivreParAge{
+    <div id="rechercheAge">
+        <img src="~/Content/images/age.png" alt="logoAge" style="width:10%;height:auto;" />
+        @Html.RouteLink("Recherche par âge", "RechercheLivreParAge")
+    </div>
+}
+@section rechercheLivreParNom{
+    <div id="rechercheNom">
+        <img src="~/Content/images/livres.png" alt="logoLivre" style="width:10%;height:auto;" />
+        @Html.RouteLink("Recherche par titre ou auteur", "RechercheLivreParNom")
+    </div>
+}
+
+@RenderBody()
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/OgreEnSoucoupe/afficheExplicationVignetteTousLesLivres.js"></script>
+}

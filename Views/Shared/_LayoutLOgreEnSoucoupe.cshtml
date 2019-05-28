@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>L'ogre en soucoupe</title>
+    <link href="../Content/css/lOgreEnSoucoupe.css" rel="stylesheet" type="text/css" />    
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div id="header">
+        <div id="blocLogo">
+            <div id="logo">
+                <img id="logoLOgreEnSoucoupe" src="~/Content/images/jouet.png" alt="logo le petit robot rond rouge" style="width:120%;height:auto;display:inline-block;margin-top:20px;" />
+            </div>
+            <div id="nomMagasin">
+                <h1 id="enseigne">Le petit robot rond rouge</h1>
+            </div>
+        </div>
+        <div id="blocGestionConnexionNav">
+            <div id="gestionConnexion">
+                <div id="connexion">
+                    <div id="gestion">
+                        <a href="@Url.Action("TableauDeBord", "Gestion")">
+                            <img src="~/Content/images/gestion.png" alt="icône gestion" style="width:54%;height:auto;display:inline-block;">
+                        </a>
+                    </div>
+                    @if (HttpContext.Current.Session["Login"] == null)
+    {
+                <div id="creerCompte">
+                    <img src="~/Content/images/creerCompte.png" alt="ccreerCompte" style="width:15%;height:auto" />
+                    @Html.ActionLink("Créer un compte", "CreerCompte", "Login")
+                </div>
+                <div id="seConnecter">
+                    <img src="~/Content/images/connexion.png" alt="connexion" style="width:13%;height:auto" />
+                    @Html.ActionLink("Se connecter", "Connexion", "Login")
+                </div>
+}
+else
+{
+                <div id="seDeconnecter">
+                    @Html.ActionLink("Se déconnecter", "Deconnexion", "Login")
+                </div>
+}
+                </div>
+                
+            </div>
+            <div id="nav">
+
+                <div id="accueil">@Html.ActionLink("Accueil", "Index", "Home")</div>
+                <div id="livres">@Html.ActionLink("Livres", "TousLesLivres", "Livre")</div>
+                <div id="jouets">@Html.ActionLink("Jouets", "TousLesJouets", "Jouet")</div>
+                <div id="activites">@Html.ActionLink("Activités", "ToutesLesActivites", "Activite")</div>
+                <div id="contact">@Html.ActionLink("Contact", "ContactHome", "Contact")</div>
+            </div>
+        </div>
+    </div>
+    <div id="sectionRechercheLivre">
+        @RenderSection("rechercheLivreParAge", required: false)
+        @RenderSection("rechercheLivreParTheme", required: false)
+        @RenderSection("rechercheLivreParNom", required: false)
+    </div>
+    
+
+    
+
+    <div id="main">
+        @RenderBody()
+        @RenderSection("pageBusinessPlan", required: false)
+    </div>
+
+    <div id="footer" >
+        <hr />
+        <p style="text-align:right;padding-right:5%;">&copy; @DateTime.Now.Year - Le petit robot rond rouge</p>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

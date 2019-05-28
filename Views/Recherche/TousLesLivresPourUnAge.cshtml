@@ -1,0 +1,71 @@
+﻿@model Ogre.Models.TousLesLivresVM
+@{
+    Layout = "~/Views/Shared/_LayoutLivre.cshtml";
+}
+@{
+    ViewBag.Title = "TousLesLivres";
+}
+
+<div class="catalogueLivres">
+    <h2>Les livres pour les @Model.ListeAges[0].TrancheDAge ans</h2>
+    @for (var i = 0; i < Model.ListeLivres.Count; i++)
+    {
+        <div class="doubleVignetteLivre">
+            <div class="vignetteLivre" style="opacity:1;display:inline-block;">
+                <div class="imageLivre">
+                    <img src="~/Content/images/livres/@Model.ListeLivres[i].ImagePath" alt="@Model.ListeLivres[i].Libelle" />
+                </div>
+            </div>
+            <div class="vignetteHoverLivre" style="opacity:0.8;display:none;">
+                <div class="closeWindow">
+                    <img src="~/Content/images/closeWindow.png" alt="iconeFermer" style="width:10%;height:auto;text-align:right;" />
+                </div>
+                <div class="libelleHoverLivre">
+                    <h3>@Model.ListeLivres[i].Libelle</h3>
+                    @if (!string.IsNullOrEmpty(Model.ListeLivres[i].Auteur))
+                    {
+                        <h5>@Model.ListeLivres[i].Auteur</h5>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.ListeLivres[i].Scenariste) && !string.IsNullOrEmpty(Model.ListeLivres[i].Illustrateur))
+                    {
+                        <h5>@Model.ListeLivres[i].Scenariste  et @Model.ListeLivres[i].Illustrateur</h5>
+                    }
+                </div>
+                <div class="descriptionHoverLivre">
+                    <p>@Model.ListeLivres[i].Description</p>
+                </div>
+                <div class="fabricantHoverLivre">
+                    <p>@Model.ListeLivres[i].Fabricant</p>
+                </div>
+                <div class="ageLivre">
+                    <p class="ageLivre">
+                        <img src="~/Content/images/age.png" alt="nbJoueurs" style="width:15%;height:auto;" />
+                        @Html.RouteLink(@Model.ListeAges[i].TrancheDAge + "ans", "TousLesLivresParAge", new { trancheAgeLivreId = @Model.ListeAges[i].Id })
+                    </p>
+                </div>
+                <div class="themesLivre">
+                    <p class="themeLivre" style="color:#00ff90">
+                        @if (Model.ListeThemes1[i] != null)
+                        {
+                                @Html.RouteLink("#" + Model.ListeThemes1[i].Intitule, "TousLesLivresParTheme", new { themeId = Model.ListeThemes1[i].Id })
+                        }
+                        @if (Model.ListeThemes2[i] != null)
+                        {
+                                @Html.RouteLink("#" + Model.ListeThemes2[i].Intitule, "TousLesLivresParTheme", new { themeId = Model.ListeThemes2[i].Id })
+                        }
+                        @if (Model.ListeThemes3[i] != null)
+                        {
+                                @Html.RouteLink("#" + Model.ListeThemes3[i].Intitule, "TousLesLivresParTheme", new { themeId = Model.ListeThemes3[i].Id })
+                        }
+                    </p>
+                    </div>
+                    <div class="prixHoverLivre">
+                        <p>@Model.ListeLivres[i].Prix euros</p>
+                    </div>
+                    <div class="boutonDetails">@Html.RouteLink("Plus de détails", "FicheLivre", new { Id = Model.ListeLivres[i].Id }) </div>
+                </div>
+        </div>
+    }
+</div>
+
+

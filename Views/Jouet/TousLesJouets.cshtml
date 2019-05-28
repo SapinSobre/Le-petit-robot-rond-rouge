@@ -1,0 +1,45 @@
+﻿@model List<Ogre.Models.Jouet>
+@{
+    ViewBag.Title = "TousLesJouets";
+}
+@section styles{
+    <link type="text/css" rel="stylesheet" href="~/Content/css/tousLesJouets.css" />
+}
+
+    <div class="catalogueJouets">
+        <h2>Les jouets</h2>
+        @foreach (var jouet in Model)
+    {
+        <div class="doubleVignetteJouet">
+            <div class="vignetteJouet" style="opacity:1;display:inline-block;">
+                <div class="imageJouet">
+                    <img src="~/Content/images/jouets/@jouet.ImagePath" alt="@jouet.Libelle" />
+                </div>
+            </div>
+            <div class="vignetteHoverJouet" style="opacity:0.8;display:none;">
+                <div class="closeWindow">
+                    <img src="~/Content/images/closeWindow.png" alt="iconeFermer" style="width:10%;height:auto;text-align:right;" />
+                </div>
+                <div class="libelleHoverJouet">
+                    <h3>@jouet.Libelle</h3>
+                </div>
+                <div class="descriptionHoverJouet">
+                    <p>@jouet.Description</p>
+                </div>
+                <div class="fabricantHoverJouet">
+                    <p>@jouet.Fabricant</p>
+                </div>
+
+                <div class="prixHoverJouet">
+                    <p>@jouet.Prix euros</p>
+                </div>
+                <div class="boutonDetails">@Html.ActionLink("Plus de détails", "FicheLivre") </div>
+            </div>
+        </div>
+
+}
+    </div>
+
+   @section scripts{
+       <script type="text/javascript" src="~/Scripts/OgreEnSoucoupe/afficheExplicationVignetteTousLesJouets.js"></script>
+       }

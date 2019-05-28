@@ -1,0 +1,107 @@
+﻿@model Ogre.Models.FicheLivreVM
+@{
+    Layout = "~/Views/Shared/_LayoutTableauDeBord.cshtml";
+}
+@{
+    ViewBag.Title = "AjouterLivre";
+}
+@section gestion{
+<div class="ajouter">
+    <div class="ajouterLivre">
+        <a href="@Url.Action("AjouterLivre", "Livre")"><img src="~/Content/images/livres.png" alt="iconeJouet" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div class="ajouterJouet">
+        <a href="@Url.Action("AjouterJouet", "Jouet")"><img src="~/Content/images/jouet.png" alt="iconeJouet" style="display:inline-block;width:50%;" /></a>
+    </div>
+    <div id="aPropos" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("TableDesMatieres", "APropos")"><img src="~/Content/images/businessPlan.png" alt="iconeBusinessPlan" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div id="lesChiffres" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("LesChiffres", "Gestion")"><img src="~/Content/images/argent.png" alt="iconeArgent" style="display:inline-block;width:40%;" /></a>
+    </div>
+</div>
+}
+
+    <div id="test">
+        <h2 id="mettreAJourLivre">Mettre à jour @Model.Livre.Libelle</h2>
+
+        @using (Html.BeginForm("MettreAJourLivre", "Livre", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.Label("Libelle", "Libellé")
+        <br />
+        @Html.TextBoxFor(model => model.Livre.Libelle)
+        <br />
+        @Html.ValidationMessageFor(model => model.Livre.Libelle)
+        <br />
+        @Html.LabelFor(model => model.Livre.Auteur)
+        <br />
+        @Html.TextBoxFor(model => model.Livre.Auteur)
+        <br />
+        @Html.ValidationMessageFor(model => model.Livre.Auteur)
+        <br />
+        @Html.LabelFor(model => model.Livre.Illustrateur)
+        <br />
+        @Html.TextBoxFor(model => model.Livre.Illustrateur)
+        <br />
+        @Html.ValidationMessageFor(model => model.Livre.Illustrateur)
+        <br />
+        @Html.LabelFor(model => model.Livre.Scenariste)
+        <br />
+        @Html.TextBoxFor(model => model.Livre.Scenariste)
+        <br />
+        @Html.ValidationMessageFor(model => model.Livre.Scenariste)
+        <br />
+        @Html.LabelFor(model => model.Livre.Description)
+        <br />
+        @Html.TextBoxFor(model => model.Livre.Description)
+        <br />
+        @Html.ValidationMessageFor(model => model.Livre.Description)
+        <br />
+        @Html.Label("Fabricant", "Éditeur")
+        <br />
+        @Html.TextBoxFor(model => model.Livre.Fabricant)
+        <br />
+        @Html.ValidationMessageFor(model => model.Livre.Fabricant)
+        <br />
+        @Html.LabelFor(model => model.Livre.Prix)
+        <br />
+        @Html.TextBoxFor(model => model.Livre.Prix)
+        <br />
+        @Html.ValidationMessageFor(model => model.Livre.Prix)
+        <br />
+        @Html.LabelFor(model => model.Livre.ImagePath)
+        <input type="file" name="ImageFile" required />
+        <br /><br />
+        @*@Html.Label("ListeAgesLivres", "Age")
+        <br />
+        @Html.DropDownListFor(model => model.Livre.AgeLivreId, Model.Livre.ListeAgesLivres)
+        <br />
+        @Html.ValidationMessageFor(model => model.Livre.ListeAgesLivres)
+        <br />*@
+    @Html.ValidationMessageFor(model => model.ListeThemes)
+for (int i = 0; i < Model.Livre.ListeThemeCheckboxVM.Count; i++)
+    {
+<div>
+    @Html.CheckBoxFor(m => m.Livre.ListeThemeCheckboxVM[i].EstSelectionne)
+    @Html.LabelFor(m => m.Livre.ListeThemeCheckboxVM[i].EstSelectionne, Model.Livre.ListeThemeCheckboxVM[i].NomTheme)
+    @Html.HiddenFor(m => m.Livre.ListeThemeCheckboxVM[i].Id)
+    @Html.HiddenFor(m => m.Livre.ListeThemeCheckboxVM[i].NomTheme)
+</div>
+}
+
+    @Html.HiddenFor(model => model.Livre.Id)
+@Html.HiddenFor(model => model.Livre.CategorieId)
+@Html.HiddenFor(model => model.Livre.DateReception)
+@Html.HiddenFor(model => model.Livre.ImageFile)
+@Html.HiddenFor(model => model.Livre.AgeLivreId)
+    <input type="submit" value="Envoyer" />
+}
+
+    </div>
+<br /><br />
+
+
+
+
+
+

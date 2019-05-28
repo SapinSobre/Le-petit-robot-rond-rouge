@@ -1,0 +1,48 @@
+﻿@model Ogre.Models.RechercheLivreVM
+@section styles{
+    <link href="~/Content/css/tousLesLivres.css" type="text/css" rel="stylesheet" />
+    <style>
+        #rechercheAge, #rechercheTheme, #rechercheNom {
+            display: inline-block;
+            color: black;
+            margin-left: 5%;
+            margin-top: 20px;
+            width: 27%;
+        }
+        input {
+            margin-left: 2%;
+        }
+        select {
+            margin-left: 4%;
+        }
+    </style>
+}
+    <div id="rechercheAge">
+        @using (Html.BeginForm("RechercheLivreParAge", "Recherche", FormMethod.Post))
+        {
+        <img src="~/Content/images/age.png" alt="age" style="width:10%;height:auto;" />
+
+        @Html.DropDownListFor(model => model.AgeLivreId, Model.ListeAgesLivres)
+
+        @Html.ValidationMessageFor(model => model.ListeAgesLivres)
+
+        @Html.HiddenFor(model => model.AgeLivreId)
+        <input type="submit" value="Chercher" />
+        }
+    </div>
+
+    <div id="rechercheTheme">
+        <img src="~/Content/images/nombreJoueurs.png" alt="nombreJoueurs" style="width:10%;height:auto;" />
+        @Html.RouteLink("Recherche par thème", "RechercheLivreParTheme")
+    </div>
+
+    <div id="rechercheNom">
+        <img src="~/Content/images/livres.png" alt="logoLivre" style="width:10%;height:auto;" />
+        @Html.RouteLink("Recherche par titre ou auteur", "RechercheLivreParNom")
+    </div>
+
+    @Html.Action("TousLesLivresPourForm")
+
+    @section scripts{
+        <script type="text/javascript" src="~/Scripts/OgreEnSoucoupe/afficheExplicationVignetteTousLesLivres.js"></script>
+    }

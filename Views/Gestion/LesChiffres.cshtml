@@ -1,0 +1,119 @@
+﻿@model Ogre.Models.LesChiffresVM
+@{
+    ViewBag.Title = "LesChiffres";
+    Layout = "~/Views/Shared/_LayoutTableauDeBord.cshtml";
+}
+@section styles{
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin-left: 20%;
+            margin-bottom: 50px;
+        }
+
+        th, td {
+            border: 1px solid white;
+            padding: 1%;
+            margin: 0;
+            width: 5%;
+        }
+
+        td {
+            text-align: right;
+        }
+
+            td:first-child {
+                text-align: center;
+                font-weight: bold;
+            }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+}
+@section gestion{
+    <div class="ajouter">
+        <div class="ajouterLivre">
+            <a href="@Url.Action("AjouterLivre", "Livre")"><img src="~/Content/images/livres.png" alt="iconeJouet" style="display:inline-block;width:40%;" /></a>
+        </div>
+        <div class="ajouterJouet">
+            <a href="@Url.Action("AjouterJouet", "Jouet")"><img src="~/Content/images/jouet.png" alt="iconeJouet" style="display:inline-block;width:50%;" /></a>
+        </div>
+        <div id="aPropos" style="display:inline-block;width:10%;">
+            <a href="@Url.Action("TableDesMatieres", "APropos")"><img src="~/Content/images/businessPlan.png" alt="iconeBusinessPlan" style="display:inline-block;width:40%;" /></a>
+        </div>
+        <div id="lesChiffres" style="display:inline-block;width:10%;">
+            <a href="@Url.Action("LesChiffres", "Gestion")"><img src="~/Content/images/argent.png" alt="iconeArgent" style="display:inline-block;width:40%;" /></a>
+        </div>
+    </div>
+}
+<h2>Les chiffres</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Stock livres</th>
+            <th>Stock jouets</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Quantité stock</td>
+            <td>@Model.QuantiteStockLivres</td>
+            <td>@Model.QuantiteStockJouets</td>
+            <td>@(@Model.QuantiteStockLivres + @Model.QuantiteStockJouets)</td>
+        </tr>
+        <tr>
+            <td>Valeur stock</td>
+            <td>@Model.TotalStockLivres euros</td>
+            <td>@Model.TotalStockJouets euros</td>
+            <td>@(@Model.TotalStockLivres + @Model.TotalStockJouets) euros</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<a id="boutonAjouterFrais" style="display:inline;"><img src="~/Content/images/update.png" alt="icône ajouter frais" style="width:4%;height:auto;" /></a>
+<br />
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Poste</th>
+            <th>Coût</th>
+        </tr>
+    </thead>
+    <tbody id="tBody">
+
+        @foreach (var frais in Model.ListeFrais)
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("SupprimerFrais", new { id = frais.Id })">
+                        <img src="~/Content/images/closeWindow.png" alt="@frais.IntitulePoste" style="width:10%;" />
+                    </a>
+                    <a href="@Url.Action("MettreAJourFrais", new { id = frais.Id })">
+                        <img src="~/Content/images/update.png" alt="@frais.IntitulePoste" style="width:10%;" />
+                    </a>
+                </td>
+                <td><input class="fraisInput" type="text" value="@frais.IntitulePoste" /></td>
+                <td class="frais"><input class="fraisInput" type="text" value="@frais.Montant" style="text-align:right;" /></td>
+            </tr>
+        }
+        <tr id="ligneTotal">
+            <td>Total</td>
+            <td><span style="font-weight:bold;"></span></td>
+            <td id="result"></td>
+        </tr>
+    </tbody>
+</table>
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/OgreEnSoucoupe/tableauFrais.js"></script>
+}
+
+
+
+

@@ -1,0 +1,89 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLOgreEnSoucoupe.cshtml";
+}
+@{
+    ViewBag.Title = "View";
+}
+
+@section styles{
+    <link type="text/css" rel="stylesheet" href="~/Content/css/businessPlan.css" />
+}
+    <link href="~/Content/css/tableauDeBord.css" type="text/css" rel="stylesheet" />
+@RenderSection("gestion", required: false)
+
+
+@RenderBody()
+<div id="businessPlanBloc">
+    <h2>Business plan</h2>
+    <div id="blocGauche">
+        <div id="projet">
+            <h3>Projet</h3>
+            <div id="idee">
+                <h4>@Html.ActionLink("Une bonne idée", "BonneIdee", "APropos")</h4>
+            </div>
+            <br />
+            <div id="entreprise">
+                <h4>L'entreprise</h4>
+                <div id="fondateurs">
+                    <h5>@Html.ActionLink("Le(s) fondateur(s)", "Fondateurs", "APropos")</h5>
+                </div>
+                <div id="informations">
+                    <h5>@Html.ActionLink("Informations de l'entreprise", "Informations", "APropos")</h5>
+                </div>
+            </div>
+            <br />
+            <div id="strategie">
+                <h4>@Html.ActionLink("Stratégie : mission, vision, objectifs", "Strategie", "APropos")</h4>
+                <br /><br /><br />
+            </div>
+
+        </div>
+        <br /><br />
+        <div id="analyseDeMarcheEtPlanMarketing">
+            <h3>Analyse de marché et plan marketing</h3>
+            <div id="analyseMarche">
+                <h4>Analyse de marché</h4>
+                <div id="marche">
+                    <h5>Marché</h5>
+                </div>
+                <div id="concurrents">
+                    <h5>Concurrents</h5>
+                </div>
+                <div id="clients">
+                    <h5>Clients</h5>
+                </div>
+                <div id="fournisseurs">
+                    <h5>Fournisseurs</h5>
+                </div>
+            </div>
+            <div id="analyseSWOT">
+                <h4>Analyse SWOT</h4>
+            </div>
+            <div id="marketing">
+                <h4>Marketing</h4>
+                <div id="produits">
+                    <h5>Produit</h5>
+                </div>
+                <div id="prix">
+                    <h5>Prix</h5>
+                </div>
+                <div id="emplacement">
+                    <h5>Emplacement</h5>
+                </div>
+                <div id="promotion">
+                    <h5>Promotion</h5>
+                </div>
+                <div id="personnel">
+                    <h5>Personnel</h5>
+                </div>
+                <div id="planOrganisationnel">
+                    <h5>Plan organisationnel</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="blocDroit">
+        @RenderSection("pageBusinessPlan", required: false)
+    </div>
+</div>
+

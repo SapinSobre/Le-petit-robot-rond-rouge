@@ -1,0 +1,19 @@
+﻿@model Ogre.Models.FormAuth
+@{
+    ViewBag.Title = "CreerCompte";
+}
+
+<h2>Créer un compte</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Login", "Pseudo")
+    @Html.TextBoxFor(model => model.Utilisateur.Login)
+    @Html.ValidationMessageFor(model => model.Utilisateur.Login)
+    <br /><br />
+    @Html.Label("Pwd", "Mot de passe")
+    @Html.TextBoxFor(model => model.Utilisateur.Pwd)
+    @Html.ValidationMessageFor(moel => Model.Utilisateur.Pwd)
+    <input type="submit" value="Envoyer" />
+
+}

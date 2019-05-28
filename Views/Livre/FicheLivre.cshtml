@@ -1,0 +1,31 @@
+﻿@model Ogre.Models.FicheLivreVM
+@{
+    ViewBag.Title = "FicheLivre";
+}
+
+<h2>@Model.Livre.Libelle</h2>
+@if (Model.Livre.Auteur != null)
+{
+    <h3>@Model.Livre.Auteur</h3>
+}
+@if (Model.Livre.Scenariste != null)
+{
+    <h3>@Model.Livre.Scenariste</h3>
+}
+@if (Model.Livre.Illustrateur != null)
+{
+    <h3>@Model.Livre.Illustrateur</h3>
+}
+<img src="~/Content/images/livres/@Model.Livre.ImagePath" alt="@Model.Livre.Libelle" />
+<h5>@Model.AgeLivre.TrancheDAge ans</h5>
+<h5>
+    @for (var i = 0; i < 3; i++)
+    {
+
+        if (Model.ListeThemes[i] != null)
+        {
+            <span>#</span>@Model.ListeThemes[i].Intitule
+        }
+
+    }
+</h5>

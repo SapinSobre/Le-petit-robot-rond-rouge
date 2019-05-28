@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Informations";
+    Layout = "~/Views/Shared/_LayoutAPropos.cshtml";
+}
+@section gestion{
+<div class="ajouter">
+    <div class="ajouterLivre">
+        <a href="@Url.Action("AjouterLivre", "Livre")"><img src="~/Content/images/livres.png" alt="iconeJouet" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div class="ajouterJouet">
+        <a href="@Url.Action("AjouterJouet", "Jouet")"><img src="~/Content/images/jouet.png" alt="iconeJouet" style="display:inline-block;width:50%;" /></a>
+    </div>
+    <div id="aPropos" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("TableDesMatieres", "APropos")"><img src="~/Content/images/businessPlan.png" alt="iconeBusinessPlan" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div id="lesChiffres" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("LesChiffres", "Gestion")"><img src="~/Content/images/argent.png" alt="iconeArgent" style="display:inline-block;width:40%;" /></a>
+    </div>
+</div>
+}
+@section pageBusinessPlan{
+    <h2>Informations de l'entreprise</h2>
+    <h3>Indépendant ou société?</h3>
+    <p>Je ne sais pas encore</p>
+    <h2>La société</h2>
+    <h3>Dénomination</h3>
+    <p>Carte à puces OU Le petit robot rond rouge OU L'ogre en soucoupe</p>
+    <h3>Forme juridique</h3>
+    <p>sprl?</p>
+    <h3>Adresse</h3>
+    <p>A Mons ou à Dinant?</p>
+    <h3>Téléphone</h3>
+    <p></p>
+    <h3>Fax</h3>
+    <p></p>
+    <h3>Email</h3>
+    <p></p>
+    <h3>Nouvelle entreprise ou reprise d'entreprise</h3>
+    <p>Nouvelle entrepris</p>
+    <h3>Date de création de l'entreprise</h3>
+    <p></p>
+    <h3>Données de contact des actionnaires</h3>
+    <p></p>
+    <h3>Répartition des parts</h3>
+    <p></p>
+    <h3>Description de l'activité</h3>
+    <p></p>
+    <h3>Objectif à long terme</h3>
+    <p></p>
+    <h2>Le comptable</h2>
+    <h3>Nom</h3>
+    <p></p>
+    <h3>Prénom</h3>
+    <p></p>
+    <h3>Adresse</h3>
+    <p></p>
+    <h3>Email</h3>
+    <p></p>
+}
+

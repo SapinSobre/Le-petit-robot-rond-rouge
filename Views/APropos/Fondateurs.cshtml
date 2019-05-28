@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Fondateurs";
+    Layout = "~/Views/Shared/_LayoutAPropos.cshtml";
+}
+@section gestion{
+<div class="ajouter">
+    <div class="ajouterLivre">
+        <a href="@Url.Action("AjouterLivre", "Livre")"><img src="~/Content/images/livres.png" alt="iconeJouet" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div class="ajouterJouet">
+        <a href="@Url.Action("AjouterJouet", "Jouet")"><img src="~/Content/images/jouet.png" alt="iconeJouet" style="display:inline-block;width:50%;" /></a>
+    </div>
+    <div id="aPropos" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("TableDesMatieres", "APropos")"><img src="~/Content/images/businessPlan.png" alt="iconeBusinessPlan" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div id="lesChiffres" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("LesChiffres", "Gestion")"><img src="~/Content/images/argent.png" alt="iconeArgent" style="display:inline-block;width:40%;" /></a>
+    </div>
+</div>
+}
+@section pageBusinessPlan{
+    <h2>Le(s) fondateur(s)</h2>
+    <h3>Combien de fondateurs avez-vous pour votre entreprise?</h3>
+    <p>1 ou peut-être 2.</p>
+    <h2>Starter 1</h2>
+    <h3>Nom</h3>
+    <p>Daoût</p>
+    <h3>Prénom</h3>
+    <p>Nathalie</p>
+    <h3>Adresse du domicile</h3>
+    <p>Je ne sais pas encore. Près du magasin ou au-dessus.</p>
+    <h3>Téléphone</h3>
+    <p>0473/38 10 90</p>
+    <h3>Email</h3>
+    <p>nat.dao3@gmail.com</p>
+    <h3>Site web</h3>
+    <p>Pas encore en ligne.</p>
+    <h3>Diplômes et formation</h3>
+    <p>Master en philologie romane</p>
+    <p>Master après Master en sciences du livre (spécialisation librairie)</p>
+    <p>Certification Europass Web Application Developer</p>
+    <p>Formations en Excel, Access, Photoshop</p>
+    <p>Camp Microsoft Innovation</p>
+    <a href="~/Content/images/cv.jpg">CV</a>
+}
+
+

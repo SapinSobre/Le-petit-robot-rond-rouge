@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "BonneIdee";
+    Layout = "~/Views/Shared/_LayoutAPropos.cshtml";
+}
+@section gestion{
+<div class="ajouter">
+    <div class="ajouterLivre">
+        <a href="@Url.Action("AjouterLivre", "Livre")"><img src="~/Content/images/livres.png" alt="iconeJouet" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div class="ajouterJouet">
+        <a href="@Url.Action("AjouterJouet", "Jouet")"><img src="~/Content/images/jouet.png" alt="iconeJouet" style="display:inline-block;width:50%;" /></a>
+    </div>
+    <div id="aPropos" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("TableDesMatieres", "APropos")"><img src="~/Content/images/businessPlan.png" alt="iconeBusinessPlan" style="display:inline-block;width:40%;" /></a>
+    </div>
+    <div id="lesChiffres" style="display:inline-block;width:10%;">
+        <a href="@Url.Action("LesChiffres", "Gestion")"><img src="~/Content/images/argent.png" alt="iconeArgent" style="display:inline-block;width:40%;" /></a>
+    </div>
+</div>
+}
+
+@section pageBusinessPlan{
+    <h2>Une bonne idée</h2>
+    <h3>Votre idée de projet existe-t-elle déjà?</h3>
+    <p>Non</p>
+    <h3>Votre projet répond-il à un manque ou un besoin du marché?</h3>
+    <p>Oui</p>
+    <h3>Votre idée est-elle exploitable commercialement? Comment?</h3>
+    <p>Oui. Il s'agit d'un espace composé d’une librairie jeunesse et d’un magasin de jouets spécialisé dans les jeux logiques et les robots (jouets numériques) pour apprendre à coder aux enfants.</p>
+
+    <p>Les rentrées financières seront générées grâce à la vente de ces produits, ainsi que par le développement d'activités pour enfants (et parfois pour adultes accompagnants).</p>
+
+    <p>
+        Les activités sont celles d’une librairie jeunesse traditionnelle (lecture de contes pour les tout-petits, activités ludiques autour de l’imaginaire et de la lecture,..),
+        mais en proposant toujours à l’enfant des ponts avec le monde de la programmation, ou du moins, pour les plus petits, à celui de la logique.
+    </p>
+    <h3>Comment votre idée de projet a-t-elle germé?</h3>
+    <p>Depuis toujours.</p>
+    <h3>
+        Quelle est votre Unique Selling Proposition (argument clé de vente)?
+        Répondez en trois phrases (Pourquoi votre idée est-elle unique? Quels en sont les avantages pour vos clients?
+        A quels problèmes apporte-t-elle une solution?)
+    </h3>
+    <p>Mon idée est unique parce que ça n'existe pas encore et qu'elle va contre l'idée traditionnelle selon laquelle la lecture et l'imagination ne sont pas compatibles.</p>
+    <p>Le parent qui comprend l'enjeu pour son enfant de pouvoir se débrouiler un minimum avec l'outil informatique dans le futur trouvera un lieu où il pourra être informé de ce qui existe pour les enfants.</p>
+    <p>Les enfants qui ne codent pas seront les analphabètes de demain.</p>
+}

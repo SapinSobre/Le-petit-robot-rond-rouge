@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLOgreEnSoucoupe.cshtml";
+}
+@{
+    ViewBag.Title = "_LayoutTableauDeBord";
+}
+
+<link href="~/Content/css/tableauDeBord.css" type="text/css" rel="stylesheet" />
+@RenderSection("styles", required: false)
+
+@RenderSection("gestion", required: false)
+
+
+@RenderBody()
+
+@RenderSection("scripts", required: false)
