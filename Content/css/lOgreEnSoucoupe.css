@@ -1,0 +1,93 @@
+﻿body {
+    /*background-color: #9c9c9f;*/
+    width: 100%;
+    font-family: 'Verdana', 'Garamond', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#header {
+    /*background-color: #68687d;*/
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+#blocGestionConnexionNav, #blocLogo{
+    display: inline-block;
+    width: 20%;
+}
+#blocGestionConnexionNav {
+    width: 32%;    
+}
+#nav{
+    position: relative;
+    width: 100%;    
+    margin-left:35%;
+}
+#blocLogo{
+    width: 50%;
+    margin-bottom: 50px;
+    margin-left: 2%;
+    margin-top: 10px;
+}
+#gestion, #connexion {
+    display: inline-block;    
+}
+#gestion{
+    width: 10%;
+}
+#gestionConnexion {
+    margin-bottom: 50px;
+    margin-left: 40%;
+    width: 100%;
+}
+#connexion {
+    margin-top: -150px;
+    width: 100%;
+}
+#logo {
+    display: inline-block;
+    width: 10%;  
+    margin-right:2%;
+    padding:0;
+}
+#seConnecter, #creerCompte, #seDeconnecter{
+    display: inline-block;
+    width: 40%;    
+}
+#seConnecter a, #creerCompte a, #seDeconnecter a {
+    color: #0a081b;
+    text-decoration: none;
+} 
+#nomMagasin {
+    display: inline-block;
+    position:absolute;
+    margin-top:-9px;
+}
+/*
+    Adobe Fan Heiti Std
+    Adobe Fangsong Std
+*/
+#enseigne {    
+    font-family: 'Adobe Fangsong Std';
+    font-size: 3.2em;
+    color: #860521;
+}
+#accueil, #livres, #jouets, #activites, #contact {
+    display: inline-block;    
+    margin-left: 5%;
+    margin-bottom: 20px;      
+}
+#accueil a, #livres a, #jouets a, #activites a, #contact a{
+    text-decoration: none;    
+}
+
+/*
+    MAIN
+*/
+#main {   
+   
+}
+#rechercheLivre{
+    display: block;   
+}

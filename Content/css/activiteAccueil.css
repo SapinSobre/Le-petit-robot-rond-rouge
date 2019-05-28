@@ -1,0 +1,96 @@
+﻿#blocActis {
+    width: 100%;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+
+#actis4A7Ans, #actis8A11Ans {
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: bold;
+    width: 50%;
+    border: 1px solid #01274b;
+    margin: 0;
+    padding: 0;
+}
+
+#fieldsetCubetto, #fieldsetKibo {
+    display:inline-block;
+    width: 40%;
+    position:relative;
+    background-color: white;
+    padding:0;
+    margin-left: 3%;
+}
+
+#fieldsetKibo {
+    top: 20px;
+}
+
+.actisPourquoi {
+    display: inline-block;
+    width: 10%;
+    border-radius: 100%;
+    background-color: #01274b;
+    color: white;
+    padding: 2%;
+    text-align: center;
+}
+
+.imageBackgroundCubetto {
+    background-image: url('../images/backgroundCubettoDansLEspace.png');
+    background-size: contain;
+    width: 64%;
+    height: 105px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 18%;
+    padding: 0;
+    opacity:0.8;
+}
+
+.imageBackgroundKibo {
+    background-image: url('../images/backgroundKibo.png');
+    background-size: contain;
+    width: 52%;
+    height: 108px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 24%;
+    padding: 0;
+    opacity: 0.8;
+}
+
+.legende {
+    color: #790424;
+    padding: 2%;
+    margin-left: 20%;    
+    font-size: 0.9em;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 1px;
+    background-color: #96e2f7;
+}
+
+.blocDescriptionActi {
+    display: inline-block;
+    z-index: 10;
+    width: 80%;
+    margin-left: 10%;    
+}
+
+#blocDescriptionCubetto {
+    margin-bottom: 20px;
+}
+
+.titreCubetto, .titreKibo {
+    font-size: 1.5em;
+    color: #01274b;
+    text-align: center;
+}
+
+.chapeauCubetto, .chapeauKibo {    
+    color: #030f24;
+    text-align: center;
+    font-weight: bold;
+}

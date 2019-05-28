@@ -1,0 +1,49 @@
+﻿/*
+    BUSINESS PLAN
+*/
+
+
+#businessPlanBloc {
+    background-color: #4470ad;
+    margin-bottom: 30px;
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    text-align: center;
+    margin-top:30px;
+}
+
+h2{
+    padding-top:40px;
+    padding-bottom: 20px;
+}
+
+h3{
+    padding-top:10px;
+}
+h4{
+    margin-bottom:-20px;
+}
+h5{
+    margin-bottom: -20px;    
+}
+#projet, #analyseDeMarcheEtPlanMarketing {
+    display: block;
+    width: 30%;
+    margin-bottom: 15px;
+    background-color: #7dc7f2;
+    margin-left: 5%;
+}
+#blocGauche {
+    background-color: #8dd3f7;
+    float: left;
+    width: 30%;
+}
+#blocDroit {
+    background-color: #bcfbf9;
+    margin-left: 35%;
+    width: 60%;
+}
+#businessPlanBloc{
+    height: 1500px;
+}

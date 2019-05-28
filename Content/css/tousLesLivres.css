@@ -1,0 +1,80 @@
+﻿.doubleVignetteLivre {
+    position: relative;
+    display: inline-block;    
+    padding-bottom: 25px;    
+    height: 500px;    
+    width: 23%;
+}
+
+.vignetteLivre {
+    position:absolute;  
+    height: 100%;
+    width: 100%;    
+}
+
+.vignetteHoverLivre{
+    position: absolute;     
+    height: 100%;
+    background-color: #3c5f86;
+    color: white;
+    width: 100%;
+}
+
+.catalogueLivres div p {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.catalogueLivres h2{
+    padding-top: 25px;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}
+
+.catalogueLivres div h3, .catalogueLivres div h5{
+    text-align:center;
+}
+
+.boutonDetails{    
+    width:35%;
+    padding: 2%;
+    border-radius: 7%;
+    text-align: center;    
+    border: 1px solid white;
+    margin-left: 30.5%;
+}
+
+.boutonDetails a {   
+    text-decoration: none;
+}
+.catalogueLivres {   
+    position: relative;
+    
+    margin-top: 0;
+    margin-bottom: 50px;
+    margin-left: 5%;
+   
+}
+
+.imageLivre {
+    margin-top: 30%;
+    text-align: center;
+}
+.imageLivre img {    
+    width: 300px;
+    height: auto;
+}
+
+.descriptionHoverLivre {
+    height: 150px;
+    overflow: hidden;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.closeWindow img{
+    margin-left: 85%;
+    margin-top: 5%;
+}
+

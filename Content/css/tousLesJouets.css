@@ -1,0 +1,80 @@
+﻿.doubleVignetteJouet {
+    position: relative;
+    display: inline-block;    
+    padding-bottom: 25px;    
+    height: 500px;
+    
+    width: 23%;
+}
+
+.vignetteJouet {
+    position:absolute;  
+    height: 100%;
+    width: 100%;    
+}
+
+.vignetteHoverJouet{
+    position: absolute;     
+    height: 100%;
+    background-color: #111f31;
+    color: white;
+    width: 100%;
+}
+
+.catalogueJouets div p {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.catalogueJouets h2{
+    padding-top: 25px;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}
+
+.catalogueJouets div h3, .catalogueJouets div h5{
+    text-align:center;
+}
+
+.boutonDetails{    
+    width:35%;
+    padding: 2%;
+    border-radius: 7%;
+    text-align: center;    
+    border: 1px solid white;
+    margin-left: 30.5%;
+}
+
+.boutonDetails a {   
+    text-decoration: none;
+}
+.catalogueJouets {   
+    position: relative;
+    
+    margin-top: 0;
+    margin-bottom: 50px;
+    margin-left: 5%;
+   
+}
+
+.imageJouet {
+    margin-top: 30%;
+    text-align: center;
+}
+.imageJouet img {    
+    width: 300px;
+    height: auto;
+}
+
+.descriptionHoverJouet {
+    height: 150px;
+    overflow: hidden;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.closeWindow img{
+    margin-left: 85%;
+    margin-top: 5%;
+}
